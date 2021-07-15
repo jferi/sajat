@@ -1,0 +1,26 @@
+import UIKit
+import Darwin
+
+func ten_to_bin (ten: Int) -> String
+{
+    let hatar = Int(log2(Double(ten)))
+    var vegso_bin: String = ""
+    
+    var uj_ten = ten
+    
+    for index in stride(from: hatar, through: 0, by: -1)
+    {
+        let ketto_hatvany = Int(pow(2.0, Double(index)))
+        
+        if uj_ten >= ketto_hatvany {
+            vegso_bin += "1"
+            uj_ten -= ketto_hatvany
+        } else {
+            vegso_bin += "0"
+        }
+    }
+    
+    return vegso_bin
+}
+
+print("Your number in binary code: \(ten_to_bin(ten: 640))")
